@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  pageActive = 'home';
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+  funcActive (param) {
+    this.pageActive = param
+    return this.pageActive
+  }
+
 
 }

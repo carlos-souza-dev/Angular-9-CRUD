@@ -1,33 +1,27 @@
 <mat-sidenav-container class="container">
     <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item >
-                <i class="material-icons">
+            <a mat-list-item routerLink="/" (click)="funcActive('home')" class="{{ pageActive === 'home' ? 'is-active' : '' }}">
+                <mat-icon class="icon">
                     home
-                </i>
+                </mat-icon>
                 Início
             </a>
-            <a mat-list-item >
-                <i class="material-icons">
-                    storefront
-                </i>
-                Brasil
+            <a mat-list-item routerLink="notebook" (click)="funcActive('notebook')" class="{{ pageActive === 'notebook' ? 'is-active' : '' }}" >
+                <mat-icon class="icon">
+                    laptop
+                </mat-icon>
+                Notebook
             </a>
-            <a mat-list-item >
-                <i class="material-icons">
-                    storefront
-                </i>
-                França
-            </a>
-            <a mat-list-item >
-                <i class="material-icons">
-                    storefront
-                </i>
-                Usa
+            <a mat-list-item routerLink="smartphone" (click)="funcActive('smartphone')" class="{{ pageActive === 'smartphone' ? 'is-active' : '' }}">
+                <mat-icon class="icon">
+                phone
+                </mat-icon>
+                Smartphone
             </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-        <app-home>Aqui é o home</app-home>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>>

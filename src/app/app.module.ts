@@ -1,18 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+
+// Componentes
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
+import { NotebookCrudComponent } from './views/notebook-crud/notebook-crud.component';
+import { NotebookCreatedComponent } from './components/product/notebook-created/notebook-created.component';
+import { SmartphoneCreatedComponent } from './components/product/smartphone-created/smartphone-created.component';
+import { SmartphoneCrudComponent } from './views/smartphone-crud/smartphone-crud.component';
 
+// Modulos
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
+// Diretivas
+import { GreenDirective } from './directives/green.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +32,12 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    NotebookCrudComponent,
+    NotebookCreatedComponent,
+    SmartphoneCreatedComponent,
+    SmartphoneCrudComponent,
+    GreenDirective
   ],
   imports: [
     BrowserModule,
@@ -29,7 +46,10 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
