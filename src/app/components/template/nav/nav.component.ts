@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  pageActive = 'home';
+  pageActive = localStorage.getItem('pageActive') ?
+    localStorage.getItem('pageActive') : 'home';
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
 
@@ -17,8 +19,9 @@ export class NavComponent implements OnInit {
 
   funcActive (param) {
     this.pageActive = param
+    localStorage.setItem('pageActive', this.pageActive)
     return this.pageActive
   }
-
-
+  
+  
 }

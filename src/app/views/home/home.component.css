@@ -12,4 +12,12 @@
 .home .subtitle {
     font-size: 1.2rem;
     color: rgb(80, 80, 80);
+    margin-bottom: 16px;
+}
+
+.note .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
 }

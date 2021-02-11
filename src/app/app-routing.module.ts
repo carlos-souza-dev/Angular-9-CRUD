@@ -12,16 +12,16 @@ const routes: Routes = [
     path: "",
     component: HomeComponent
   }, {
-    path: "notebook",
+    path: "notebooks",
     component: NotebookCrudComponent
   }, {
-    path: "notebook/create",
+    path: "notebooks/create",
     component: NotebookCreatedComponent
   }, {
-    path: "smartphone",
+    path: "smartphones",
     component: SmartphoneCrudComponent
   }, {
-    path: "smartphone/create",
+    path: "smartphones/create",
     component: SmartphoneCreatedComponent
   }
 ];
