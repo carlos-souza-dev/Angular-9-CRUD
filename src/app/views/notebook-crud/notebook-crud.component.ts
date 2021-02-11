@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notebook-crud',
@@ -13,8 +13,7 @@ export class NotebookCrudComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToNotebookCreate( ): void {
-    this.router.navigate(['/notebooks/create'])
+  navigateToNotebookCreate( ) {
+    this.router.navigate(['notebooks/create'])
   }
-
 }

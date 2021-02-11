@@ -22,9 +22,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // Diretivas
 import { GreenDirective } from './directives/green.directive';
+import { CancelDirective } from './directives/cancel.directive';
+import { ConfirmDirective } from './directives/confirm.directive';
+
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -37,7 +42,9 @@ import { GreenDirective } from './directives/green.directive';
     NotebookCreatedComponent,
     SmartphoneCreatedComponent,
     SmartphoneCrudComponent,
-    GreenDirective
+    GreenDirective,
+    CancelDirective,
+    ConfirmDirective,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +56,9 @@ import { GreenDirective } from './directives/green.directive';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

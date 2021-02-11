@@ -28,3 +28,7 @@
 .input-div input {
     color: rgb(97, 97, 97);
 }
+
+.note-form .button {
+    margin-right: 20px;
+}

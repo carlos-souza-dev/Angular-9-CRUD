@@ -10,3 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .white {
     color: rgb(195, 195, 195)
 }
+
+.snack-bar span.mat-button-wrapper {
+    color: #f35d63;
+}

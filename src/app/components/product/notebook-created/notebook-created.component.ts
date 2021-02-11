@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from '../product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-notebook-created',
@@ -7,16 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotebookCreatedComponent implements OnInit {
 
-  atributoTeste = "iddatagp"
-  cont = 0;
-  constructor() { }
+  notebook: Product = {
+    name: 'Notebook',
+    price: 3333.99
+  }
+
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  funcTeste(): void {
-    this.cont++
-    this.atributoTeste = "Mudou "+this.cont
+  createNotebook():void {
+
+    this.productService.createNotebook(this.notebook).subscribe(() => {
+      this.productService.showMenssage('Notebook salvo!')
+      this.router.navigate(['notebooks'])
+    })
   }
 
+  cancel(): void {
+    this.router.navigate(['notebooks'])
+  }
 }

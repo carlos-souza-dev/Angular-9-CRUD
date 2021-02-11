@@ -6,7 +6,7 @@
         Cadastrar um novo notebook.
     </mat-card-subtitle>
 </mat-card>
-<form class="note-form">
+<div class="note-form">
     <mat-form-field class="input-div">
       <mat-label class="note-label">Modelo</mat-label>
       <input matInput placeholder="Mac Pro">
@@ -16,4 +16,8 @@
         <mat-label class="note-label">Valor</mat-label>
         <input matInput placeholder="5000.00">
     </mat-form-field>
-</form>
+    <div class="buttons">
+        <button class="button" mat-raised-button color="dark" dirConfirm (click)="createNotebook()"><mat-icon>done</mat-icon>Salvar</button>
+        <button class="button" mat-raised-button color="dark" dirCancel (click)="cancel()"><mat-icon>close</mat-icon>Cancelar</button>
+    </div>
+</div>

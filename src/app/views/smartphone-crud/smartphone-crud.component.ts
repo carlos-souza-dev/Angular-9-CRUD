@@ -11,11 +11,10 @@ export class SmartphoneCrudComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-
   }
 
   navigateToSmartphoneCreate(){
-    this.router.navigate(['/smartphones/create'])
+    this.router.navigate(['smartphones/create'])
   }
 
 }
