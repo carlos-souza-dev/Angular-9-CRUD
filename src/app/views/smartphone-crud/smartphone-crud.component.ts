@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/components/product/product.model';
+import { ProductService } from 'src/app/components/product/product.service';
 
 @Component({
   selector: 'app-smartphone-crud',
@@ -8,13 +10,22 @@ import { Router } from '@angular/router';
 })
 export class SmartphoneCrudComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  smartphones: Product[]
+
+  constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.getSmartphone();
   }
 
   navigateToSmartphoneCreate(){
-    this.router.navigate(['smartphones/create'])
+    this.router.navigate(['/smartphones/create'])
+  }
+
+  getSmartphone():void {
+    this.productService.listSmartphone().subscribe( res => {
+      this.smartphones = res
+    })
   }
 
 }

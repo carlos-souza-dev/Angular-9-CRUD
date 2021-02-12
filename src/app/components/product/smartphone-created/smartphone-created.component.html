@@ -6,18 +6,17 @@
         Cadastrar um novo smartphone.
     </mat-card-subtitle>
 </mat-card>
-<div class="smart-form">
-    <mat-form-field class="input-div">
-      <mat-label class="smart-label">Modelo</mat-label>
-      <input matInput placeholder="Mac Pro">
-    </mat-form-field>
-    
-    <mat-form-field class="input-div">
-        <mat-label class="smart-label">Valor</mat-label>
-        <input matInput placeholder="5000.00">
-    </mat-form-field>
-    <div class="buttons">
-        <button class="button" mat-raised-button color="dark" dirConfirm (click)="createSmartphone()"><mat-icon>done</mat-icon>Salvar</button>
-        <button class="button" mat-raised-button color="dark" dirCancel (click)="cancel()"><mat-icon>close</mat-icon>Cancelar</button>
+<form class="smart-form">
+    <div class="input-div">
+      <label class="smart-label">Modelo</label>
+      <input class="input" matInput placeholder="Mac Pro" [(ngModel)]="smartphone.name" name="name">
+    </div>    
+    <div class="input-div">
+        <label class="smart-label">Valor</label>
+        <input class="input" matInput placeholder="5000.00" [(ngModel)]="smartphone.price" name="price">
     </div>
+</form>
+<div class="buttons">
+    <button class="button" mat-raised-button color="dark" dirConfirm (click)="createSmartphone()"><mat-icon>done</mat-icon>Salvar</button>
+    <button class="button" mat-raised-button color="dark" dirCancel (click)="cancel()"><mat-icon>close</mat-icon>Cancelar</button>
 </div>

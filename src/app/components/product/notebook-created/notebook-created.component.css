@@ -21,14 +21,39 @@
     padding: 50px;
 }
 
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
 .input-div .note-label {
     color: rgb(56, 56, 56);
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: 500;
 }
 
-.input-div input {
+.input-div .input {
+    position: relative;
     color: rgb(97, 97, 97);
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 24px;
+    padding: 3px 8px;
 }
 
-.note-form .button {
+.input-div .input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    box-shadow: 0 0 1pt 1pt rgb(20, 160, 118);
+}
+
+.buttons {
+    background-color: white;
+    border: 0;
+    padding: 25px 50px;
+}
+
+.button {
     margin-right: 20px;
 }

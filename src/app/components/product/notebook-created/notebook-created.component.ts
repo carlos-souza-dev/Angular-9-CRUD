@@ -11,8 +11,8 @@ import { ProductService } from '../product.service';
 export class NotebookCreatedComponent implements OnInit {
 
   notebook: Product = {
-    name: 'Notebook',
-    price: 3333.99
+    name: '',
+    price: null
   }
 
   constructor(private productService: ProductService, private router: Router) { }
@@ -24,11 +24,11 @@ export class NotebookCreatedComponent implements OnInit {
 
     this.productService.createNotebook(this.notebook).subscribe(() => {
       this.productService.showMenssage('Notebook salvo!')
-      this.router.navigate(['notebooks'])
+      this.router.navigate(['/notebooks'])
     })
   }
 
   cancel(): void {
-    this.router.navigate(['notebooks'])
+    this.router.navigate(['/notebooks'])
   }
 }
