@@ -30,4 +30,12 @@ export class ProductService {
   createSmartphone (product: Product ): Observable<Product> {
     return this.http.post<Product>(this.smartphoneUrl, product)
   }
+
+  listSmartphone (): Observable<Product[]> {
+    return this.http.get<Product[]>(this.smartphoneUrl)
+  }
+
+  listNotebook (): Observable<Product[]> {
+    return this.http.get<Product[]>(this.notebookUrl)
+  }
 }
