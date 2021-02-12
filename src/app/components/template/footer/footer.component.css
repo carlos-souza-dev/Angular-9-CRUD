@@ -4,6 +4,7 @@
     justify-content: center;
     bottom: 0;
     display: flex;
+    z-index: 3;
 }
 
 .header a {

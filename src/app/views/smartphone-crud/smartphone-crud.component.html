@@ -1,9 +1,33 @@
 <mat-card class="smart mat-elevation-z3">
-    <mat-card-title class="title">
-        Smartphone
-    </mat-card-title>
-    <mat-card-subtitle class="subtitle">
-        Todos os smartphone disponíveis.
-    </mat-card-subtitle>
-    <button class="button" mat-raised-button color="dark" appGreen (click)="navigateToSmartphoneCreate()"><mat-icon>add</mat-icon>Smartphone</button>
+  <mat-card-title class="title">
+    Smartphone
+  </mat-card-title>
+  <mat-card-subtitle class="subtitle">
+    Todos os smartphone disponíveis.
+  </mat-card-subtitle>
+  <button class="button" mat-raised-button color="dark" appGreen (click)="navigateToSmartphoneCreate()">
+    <mat-icon>add</mat-icon>Smartphone
+  </button>
 </mat-card>
+<div class="card-container">
+  <mat-card class="example-card phone-card" *ngFor="let phone of smartphones">
+    <mat-card-header>
+      <mat-card-subtitle>Modelo:
+        <mat-card-title>
+          <p>
+            {{phone.name}}
+          </p>
+        </mat-card-title>
+      </mat-card-subtitle>
+      <mat-card-subtitle>Preço:
+        <mat-card-title>
+          <p>
+            {{phone.price}}
+          </p>
+        </mat-card-title>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <button class="button" dirConfirm mat-button>Editar</button>
+    <button class="button" dirCancel mat-button>Excluir</button>
+  </mat-card>
+</div>

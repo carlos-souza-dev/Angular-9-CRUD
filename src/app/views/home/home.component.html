@@ -6,3 +6,53 @@
         Todos os produtos disponíveis.
     </mat-card-subtitle>
 </mat-card>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab class="label" label="First">
+        <div class="card-container">
+            <mat-card class="example-card phone-card" *ngFor="let note of notebooks">
+                <mat-card-header>
+                    <mat-card-subtitle>Modelo:
+                        <mat-card-title>
+                            <p>
+                                {{note.name}}
+                            </p>
+                        </mat-card-title>
+                    </mat-card-subtitle>
+                    <mat-card-subtitle>Preço:
+                        <mat-card-title>
+                            <p>
+                                {{note.price}}
+                            </p>
+                        </mat-card-title>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <button class="button" dirConfirm mat-button>Editar</button>
+                <button class="button" dirCancel mat-button>Excluir</button>
+            </mat-card>
+        </div>
+    </mat-tab>
+    <mat-tab class="label" label="Second">
+        <div class="card-container">
+            <mat-card class="example-card phone-card" *ngFor="let note of notebooks">
+                <mat-card-header>
+                    <mat-card-subtitle>Modelo:
+                        <mat-card-title>
+                            <p>
+                                {{note.name}}
+                            </p>
+                        </mat-card-title>
+                    </mat-card-subtitle>
+                    <mat-card-subtitle>Preço:
+                        <mat-card-title>
+                            <p>
+                                {{note.price}}
+                            </p>
+                        </mat-card-title>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <button class="button" dirConfirm mat-button>Editar</button>
+                <button class="button" dirCancel mat-button>Excluir</button>
+            </mat-card>
+        </div>
+    </mat-tab>
+</mat-tab-group>

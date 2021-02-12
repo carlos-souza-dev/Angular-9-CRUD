@@ -21,3 +21,25 @@
     transform: translateY(-50%);
     right: 20px;
 }
+
+.card-container {
+    display: flex;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+}
+
+.phone-card {
+    margin: 24px auto;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.card-container .phone-card .mat-card-subtitle p {
+    color: #ffffff;
+}
+
+.button {
+    margin-right: 20px;
+}

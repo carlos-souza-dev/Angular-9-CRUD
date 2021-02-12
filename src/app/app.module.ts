@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -64,7 +65,8 @@ import { ConfirmDirective } from './directives/confirm.directive';
     MatSnackBarModule,
     HttpClientModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

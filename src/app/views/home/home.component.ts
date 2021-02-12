@@ -16,17 +16,14 @@ export class HomeComponent implements OnInit {
   smartphones: Product[]
 
   ngOnInit(): void {
-    this.getNotebooks();
-    this.getSmartphones();
+    this.getProducts();
   }
 
-  getNotebooks(): void {
+  getProducts(): void {
     this.productService.listNotebook().subscribe( res => {
       this.notebooks = res;
     })
-  }
-
-  getSmartphones(): void {
+      
     this.productService.listSmartphone().subscribe( res => {
       this.smartphones = res;
     })
