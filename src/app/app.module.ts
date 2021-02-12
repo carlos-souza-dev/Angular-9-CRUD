@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -33,8 +33,12 @@ import { GreenDirective } from './directives/green.directive';
 import { CancelDirective } from './directives/cancel.directive';
 import { ConfirmDirective } from './directives/confirm.directive';
 
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { NotebookUpdateComponent } from './components/product/notebook-update/notebook-update.component';
+import { SmartphoneUpdateComponent } from './components/product/smartphone-update/smartphone-update.component';
 
-
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -50,6 +54,8 @@ import { ConfirmDirective } from './directives/confirm.directive';
     GreenDirective,
     CancelDirective,
     ConfirmDirective,
+    NotebookUpdateComponent,
+    SmartphoneUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,10 @@ import { ConfirmDirective } from './directives/confirm.directive';
     MatFormFieldModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

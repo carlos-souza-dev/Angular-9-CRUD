@@ -20,8 +20,8 @@ export class SmartphoneCreatedComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createSmartphone():void {
-    this.productService.createSmartphone(this.smartphone).subscribe(() => {
+  createSmartphone(url):void {
+    this.productService.createItem(url, this.smartphone).subscribe(() => {
       this.productService.showMenssage('Smartphone salvo!')
       this.router.navigate(['smartphones'])
     })

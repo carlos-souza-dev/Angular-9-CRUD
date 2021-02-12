@@ -15,7 +15,7 @@ export class SmartphoneCrudComponent implements OnInit {
   constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.getSmartphone();
+    this.getSmartphone()
   }
 
   navigateToSmartphoneCreate(){
@@ -26,6 +26,13 @@ export class SmartphoneCrudComponent implements OnInit {
     this.productService.listSmartphone().subscribe( res => {
       this.smartphones = res
     })
+  }
+
+  deleteSmartphone (url, id) {
+    this.productService.deleteItem(url, id).subscribe(() => {
+      this.productService.showMenssage('Item excluído com sucesso!')
+    })
+    this.getSmartphone()
   }
 
 }

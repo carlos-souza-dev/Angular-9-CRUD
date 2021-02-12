@@ -22,12 +22,12 @@
       <mat-card-subtitle>Preço:
         <mat-card-title>
           <p>
-            {{note.price}}
+            {{note.price | currency: 'BRL' }}
           </p>
         </mat-card-title>
       </mat-card-subtitle>
     </mat-card-header>
     <button class="button" dirConfirm mat-button>Editar</button>
-    <button class="button" dirCancel mat-button>Excluir</button>
+    <button class="button" dirCancel mat-button (click)="deleteNotebook('notebook', note.id)" >Excluir</button>
   </mat-card>
 </div>

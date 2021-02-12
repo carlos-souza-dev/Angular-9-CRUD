@@ -20,9 +20,8 @@ export class NotebookCreatedComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createNotebook():void {
-
-    this.productService.createNotebook(this.notebook).subscribe(() => {
+  createNotebook(url): void {
+    this.productService.createItem(url, this.notebook).subscribe(() => {
       this.productService.showMenssage('Notebook salvo!')
       this.router.navigate(['/notebooks'])
     })

@@ -6,8 +6,8 @@
         Todos os produtos disponíveis.
     </mat-card-subtitle>
 </mat-card>
-<mat-tab-group mat-align-tabs="start">
-    <mat-tab class="label" label="First">
+<mat-tab-group mat-align-tabs="start" class="group">
+    <mat-tab label="Notebooks">
         <div class="card-container">
             <mat-card class="example-card phone-card" *ngFor="let note of notebooks">
                 <mat-card-header>
@@ -21,7 +21,7 @@
                     <mat-card-subtitle>Preço:
                         <mat-card-title>
                             <p>
-                                {{note.price}}
+                                {{note.price | currency: 'BRL' }}
                             </p>
                         </mat-card-title>
                     </mat-card-subtitle>
@@ -31,21 +31,21 @@
             </mat-card>
         </div>
     </mat-tab>
-    <mat-tab class="label" label="Second">
+    <mat-tab label="Smartphones">
         <div class="card-container">
-            <mat-card class="example-card phone-card" *ngFor="let note of notebooks">
+            <mat-card class="example-card phone-card" *ngFor="let phone of smartphones">
                 <mat-card-header>
                     <mat-card-subtitle>Modelo:
                         <mat-card-title>
                             <p>
-                                {{note.name}}
+                                {{phone.name}}
                             </p>
                         </mat-card-title>
                     </mat-card-subtitle>
                     <mat-card-subtitle>Preço:
                         <mat-card-title>
                             <p>
-                                {{note.price}}
+                                {{phone.price | currency: 'BRL' }}
                             </p>
                         </mat-card-title>
                     </mat-card-subtitle>
