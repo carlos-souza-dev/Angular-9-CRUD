@@ -16,7 +16,7 @@ export class SmartphoneUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.productService.readById(id).subscribe( smartphone => {
+    this.productService.readById('smartphone', id).subscribe( smartphone => {
       this.smartphone = smartphone
     })
   }

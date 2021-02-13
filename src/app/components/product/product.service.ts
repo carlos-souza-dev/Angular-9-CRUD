@@ -49,8 +49,8 @@ export class ProductService {
     return this.http.put<Product>(searchUrl, item)
   }
   
-  readById(id: string): Observable<Product> {
-    const searchUrl = `${this.apiSmartphone}/${id}`;
+  readById(url: string, id: string): Observable<Product> {
+    const searchUrl = `${this.apiUrl}${url}/${id}`;
     return this.http.get<Product>(searchUrl)
   }
 }
