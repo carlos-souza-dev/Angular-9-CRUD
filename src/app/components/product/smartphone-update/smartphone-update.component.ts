@@ -22,7 +22,10 @@ export class SmartphoneUpdateComponent implements OnInit {
   }
 
   updateSmartphone(): void {
-
+    this.productService.updateItem('smartphone', this.smartphone).subscribe(() => {
+      this.productService.showMenssage('Produso atualizado!')
+      this.router.navigate(['/smartphones'])
+    }) 
   }
 
   cancel(): void {

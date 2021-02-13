@@ -9,12 +9,12 @@
 <form class="note-form">
     <div class="input-div">
       <label class="note-label">Modelo</label>
-      <input class="input" matInput placeholder="Mac Pro" value="{{notebook?.name}}" name="name">
+      <input class="input" matInput placeholder="Mac Pro" [(ngModel)]="notebook.name" name="name">
     </div>
     
     <div class="input-div">
         <label class="note-label">Valor</label>
-        <input class="input" matInput placeholder="5000.00" value="{{notebook?.price | currency: 'BRL' }}" name="price">
+        <input class="input" matInput placeholder="5000.00" [(ngModel)]="notebook.price" name="price">
     </div>
 </form>
 <div class="buttons">

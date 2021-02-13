@@ -50,8 +50,8 @@
                         </mat-card-title>
                     </mat-card-subtitle>
                 </mat-card-header>
-                <button class="button" dirEdit mat-button><mat-icon class="icon">edit</mat-icon>Editar</button>
-                <button class="button" dirCancel mat-button><mat-icon class="icon">delete</mat-icon>Excluir</button>
+                <button class="button" dirEdit mat-button routerLink="smartphones/update/{{ phone.id }}"><mat-icon class="icon">edit</mat-icon>Editar</button>
+                <button class="button" dirCancel mat-button (click)="deleteItem()"><mat-icon class="icon">delete</mat-icon>Excluir</button>
             </mat-card>
         </div>
     </mat-tab>

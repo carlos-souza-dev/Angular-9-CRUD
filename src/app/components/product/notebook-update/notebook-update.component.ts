@@ -22,7 +22,11 @@ export class NotebookUpdateComponent implements OnInit {
   }
 
   updateNotebook(): void {
-
+    this.productService.updateItem('notebook', this.notebook).subscribe((res) => {
+      console.log("Resposta", res)
+      this.productService.showMenssage('Produto atualizado!')
+      this.router.navigate(['/notebooks'])
+    })
   }
 
   cancel(): void {
