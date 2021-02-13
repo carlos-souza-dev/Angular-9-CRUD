@@ -37,6 +37,7 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { NotebookUpdateComponent } from './components/product/notebook-update/notebook-update.component';
 import { SmartphoneUpdateComponent } from './components/product/smartphone-update/smartphone-update.component';
+import { EditDirective } from './directives/edit.directive';
 
 registerLocaleData(localePt);
 
@@ -56,6 +57,7 @@ registerLocaleData(localePt);
     ConfirmDirective,
     NotebookUpdateComponent,
     SmartphoneUpdateComponent,
+    EditDirective,
   ],
   imports: [
     BrowserModule,

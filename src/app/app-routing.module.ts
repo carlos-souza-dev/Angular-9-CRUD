@@ -20,7 +20,7 @@ const routes: Routes = [
     path: "notebooks/create",
     component: NotebookCreatedComponent
   }, {
-    path: "notebooks/update",
+    path: "notebooks/update/:id",
     component: NotebookUpdateComponent
   }, {
     path: "smartphones",
@@ -29,7 +29,7 @@ const routes: Routes = [
     path: "smartphones/create",
     component: SmartphoneCreatedComponent
   }, {
-    path: "smartphones/update",
+    path: "smartphones/update/:id",
     component: SmartphoneUpdateComponent
   }
 ];

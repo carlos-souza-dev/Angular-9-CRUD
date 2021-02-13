@@ -44,8 +44,13 @@ export class ProductService {
     return this.http.delete(this.apiUrl+url+`/${id}`)
   }
 
-  updateItem (url, id) {
-    return this.http.patch(this.apiUrl+url, id, this.httpOptions)
+  updateItem (url: string, item: Product): Observable<Product> {
+    const searchUrl = `${this.apiUrl}/${url}/${item.id}`;
+    return this.http.put<Product>(searchUrl, item)
   }
   
+  readById(url, id: string): Observable<Product> {
+    const searchUrl = `${this.apiUrl}/${url}/${id}`;
+    return this.http.get<Product>(searchUrl)
+  }
 }

@@ -24,3 +24,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-transform: uppercase;
     color: #108872;
 }
+
+.mat-button .mat-button-wrapper .icon{
+    font-size: 1.2rem;
+    margin-right: 5px;
+}

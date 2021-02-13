@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from '../product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-smartphone-update',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmartphoneUpdateComponent implements OnInit {
 
-  constructor() { }
+  smartphone: Product[]
+
+  constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
   }

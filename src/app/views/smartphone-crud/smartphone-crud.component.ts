@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/components/product/product.service';
 })
 export class SmartphoneCrudComponent implements OnInit {
 
+  item: Product[]
   smartphones: Product[]
 
   constructor(private router: Router, private productService: ProductService) { }
@@ -20,6 +21,10 @@ export class SmartphoneCrudComponent implements OnInit {
 
   navigateToSmartphoneCreate(){
     this.router.navigate(['/smartphones/create'])
+  }
+
+  navigateToSmartphoneUpdate(url, id){
+    this.router.navigate([`smartphones/update`])
   }
 
   getSmartphone():void {

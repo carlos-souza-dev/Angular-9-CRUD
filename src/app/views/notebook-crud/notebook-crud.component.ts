@@ -18,8 +18,12 @@ export class NotebookCrudComponent implements OnInit {
     this.getNotebook();
   }
 
-  navigateToNotebookCreate( ) {
+  navigateToNotebookCreate() {
     this.router.navigate(['notebooks/create'])
+  }
+
+  navigateToNotebookUpdate() {
+    this.router.navigate(['notebooks/update'])
   }
 
   getNotebook(): void {
