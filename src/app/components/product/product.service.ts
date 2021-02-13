@@ -10,7 +10,7 @@ import { Product } from './product.model';
 export class ProductService {
 
   apiUrl = "http://localhost:3001/"
-  // apiSmartphone = "http://localhost:3001/"
+  apiSmartphone = "http://localhost:3001/smartphone"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -44,13 +44,13 @@ export class ProductService {
     return this.http.delete(this.apiUrl+url+`/${id}`)
   }
 
-  updateItem (url: string, item: Product): Observable<Product> {
-    const searchUrl = `${this.apiUrl}/${url}/${item.id}`;
+  updateItem (item: Product): Observable<Product> {
+    const searchUrl = `${this.apiSmartphone}/${item.id}`;
     return this.http.put<Product>(searchUrl, item)
   }
   
-  readById(url, id: string): Observable<Product> {
-    const searchUrl = `${this.apiUrl}/${url}/${id}`;
+  readById(id: string): Observable<Product> {
+    const searchUrl = `${this.apiSmartphone}/${id}`;
     return this.http.get<Product>(searchUrl)
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -10,11 +10,22 @@ import { ProductService } from '../product.service';
 })
 export class SmartphoneUpdateComponent implements OnInit {
 
-  smartphone: Product[]
+  smartphone: Product
 
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(private router: Router, private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+    this.productService.readById(id).subscribe( smartphone => {
+      this.smartphone = smartphone
+    })
   }
 
+  updateSmartphone(): void {
+
+  }
+
+  cancel(): void {
+    this.router.navigate(['/smartphones']);
+  }
 }
