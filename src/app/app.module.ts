@@ -25,8 +25,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+
 
 // Diretivas
 import { GreenDirective } from './directives/green.directive';
@@ -38,6 +40,9 @@ import { registerLocaleData } from '@angular/common';
 import { NotebookUpdateComponent } from './components/product/notebook-update/notebook-update.component';
 import { SmartphoneUpdateComponent } from './components/product/smartphone-update/smartphone-update.component';
 import { EditDirective } from './directives/edit.directive';
+import { DialogComponent } from './views/dialog/dialog.component';
+import { SmartphoneDeleteComponent } from './components/product/smartphone-delete/smartphone-delete.component';
+import { NotebookDeleteComponent } from './components/product/notebook-delete/notebook-delete.component';
 
 registerLocaleData(localePt);
 
@@ -58,6 +63,9 @@ registerLocaleData(localePt);
     NotebookUpdateComponent,
     SmartphoneUpdateComponent,
     EditDirective,
+    DialogComponent,
+    SmartphoneDeleteComponent,
+    NotebookDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +82,8 @@ registerLocaleData(localePt);
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [{
     provide: LOCALE_ID,

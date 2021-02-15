@@ -31,12 +31,4 @@ export class NotebookCrudComponent implements OnInit {
       this.notebooks = res;
     })
   }
-
-  deleteNotebook(url, id): void {
-    this.productService.deleteItem(url, id).subscribe(() => {
-      this.productService.showMenssage('Item excluído com sucesso!')
-      this.router.navigate(['notebooks'])
-    })
-    this.getNotebook();
-  }
 }

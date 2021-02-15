@@ -28,6 +28,6 @@
       </mat-card-subtitle>
     </mat-card-header>
     <a class="button" dirEdit mat-button routerLink="/smartphones/update/{{phone.id}}"><mat-icon class="icon">edit</mat-icon> Editar</a>
-    <a class="button" dirCancel mat-button (click)="deleteSmartphone('smartphone', phone.id)"><mat-icon class="icon">delete</mat-icon>Excluir</a>
+    <a class="button" dirCancel mat-button routerLink="/smartphones/delete/{{phone.id}}"><mat-icon class="icon">delete</mat-icon>Excluir</a>
   </mat-card>
 </div>

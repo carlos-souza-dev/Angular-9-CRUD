@@ -1,0 +1,65 @@
+.note {
+    background-color: rgb(235, 235, 235);
+}
+
+.note .title {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: rgb(80, 80, 80);
+}
+
+.note .subtitle {
+    font-size: 1.2rem;
+    color: rgb(80, 80, 80);
+}
+
+.note-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-div .note-label {
+    color: rgb(56, 56, 56);
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.input-div .input {
+    position: relative;
+    color: rgb(97, 97, 97);
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 24px;
+    padding: 3px 8px;
+    font-size: 1rem;
+}
+
+.input-div .input::placeholder {
+    color: rgb(173, 173, 173);
+}
+
+.input-div .input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    box-shadow: 0 0 1pt 1pt rgb(20, 160, 118);
+}
+
+.buttons {
+    background-color: white;
+    border: 0;
+    padding: 25px 50px;
+}
+
+.button {
+    margin-right: 20px;
+}

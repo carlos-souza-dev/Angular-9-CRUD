@@ -28,6 +28,6 @@
       </mat-card-subtitle>
     </mat-card-header>
     <button class="button" dirEdit mat-button routerLink="/notebooks/update/{{note.id}}"><mat-icon class="icon">edit</mat-icon>Editar</button>
-    <button class="button" dirCancel mat-button (click)="deleteNotebook('notebook', note.id)"><mat-icon class="icon">delete</mat-icon>Excluir</button>
+    <button class="button" dirCancel mat-button routerLink="/notebooks/delete/{{note.id}}"><mat-icon class="icon">delete</mat-icon>Excluir</button>
   </mat-card>
 </div>

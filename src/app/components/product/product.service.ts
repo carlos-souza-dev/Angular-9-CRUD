@@ -14,11 +14,6 @@ export class ProductService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-  
   showMenssage(msg: string): void {
     this.snackBar.open(msg, 'Fechar', {
       duration: 3000,
@@ -40,8 +35,9 @@ export class ProductService {
     return this.http.get<Product[]>(this.apiUrl+'notebook')
   }
 
-  deleteItem (url, id ) {
-    return this.http.delete(this.apiUrl+url+`/${id}`)
+  deleteItem (url: string, id ): Observable<Product>  {
+    const searchUrl = `${this.apiUrl}${url}/${id}`;
+    return this.http.delete<Product>(searchUrl)
   }
 
   updateItem (url: string, item: Product): Observable<Product> {

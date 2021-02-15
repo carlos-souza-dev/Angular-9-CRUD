@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/components/product/product.model';
 import { ProductService } from 'src/app/components/product/product.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-smartphone-crud',
@@ -10,10 +12,12 @@ import { ProductService } from 'src/app/components/product/product.service';
 })
 export class SmartphoneCrudComponent implements OnInit {
 
-  item: Product[]
   smartphones: Product[]
 
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(
+    private router: Router, 
+    private productService: ProductService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getSmartphone()
@@ -33,11 +37,15 @@ export class SmartphoneCrudComponent implements OnInit {
     })
   }
 
-  deleteSmartphone (url, id) {
-    this.productService.deleteItem(url, id).subscribe(() => {
-      this.productService.showMenssage('Item excluído com sucesso!')
-    })
-    this.getSmartphone()
-  }
+  // DIALOG
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(DialogComponent, {
+  //     width: '300px',
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 
 }
