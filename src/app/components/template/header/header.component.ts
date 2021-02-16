@@ -25,4 +25,7 @@ export class HeaderComponent implements OnInit {
     return this.headerService.headerData.routeUrl
   }
 
+  get statusColor(): string {
+    return this.headerService.headerData.statusColor
+  }
 }

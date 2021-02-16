@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,18 +11,14 @@ export class NavComponent implements OnInit {
   pageActive = localStorage.getItem('pageActive') ?
     localStorage.getItem('pageActive') : 'home';
 
-  constructor() { 
-  }
+  constructor(
+    private headerService: HeaderService
+  ) { }
 
   ngOnInit(): void {
-
   }
 
-  funcActive (param) {
-    this.pageActive = param
-    localStorage.setItem('pageActive', this.pageActive)
-    return this.pageActive
-  }
-  
-  
+  get page (): string {
+    return this.headerService.headerData.page
+  }  
 }

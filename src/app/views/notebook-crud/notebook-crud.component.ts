@@ -22,7 +22,9 @@ export class NotebookCrudComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Notebook',
       icon: 'computer',
-      routeUrl: '/'
+      routeUrl: '/',
+      statusColor: '',
+      page: 'notebook'
     }
 
    }

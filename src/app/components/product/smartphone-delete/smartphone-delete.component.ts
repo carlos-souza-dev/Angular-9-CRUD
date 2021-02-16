@@ -24,7 +24,9 @@ export class SmartphoneDeleteComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Smartphone | Delete',
       icon: 'delete_outline',
-      routeUrl: '/smartphones'
+      routeUrl: '/smartphones',
+      statusColor: 'delete',
+      page: 'smartphone'
     }
 
    }

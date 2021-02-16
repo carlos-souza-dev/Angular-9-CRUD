@@ -25,7 +25,9 @@ export class SmartphoneUpdateComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Smartphone | Update',
       icon: 'build_circle',
-      routeUrl: '/smartphones'
+      routeUrl: '/smartphones',
+      statusColor: 'update',
+      page: 'smartphone'
     }
 
   }

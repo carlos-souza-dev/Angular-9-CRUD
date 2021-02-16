@@ -1,19 +1,19 @@
 <mat-sidenav-container class="container">
     <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/" (click)="funcActive('home')" class="{{ pageActive === 'home' ? 'is-active' : '' }}">
+            <a mat-list-item routerLink="/" class="{{ page === 'home' ? 'is-active' : '' }}">
                 <mat-icon class="icon">
                     home
                 </mat-icon>
                 Início
             </a>
-            <a mat-list-item routerLink="notebooks" (click)="funcActive('notebook')" class="{{ pageActive === 'notebook' ? 'is-active' : '' }}" >
+            <a mat-list-item routerLink="notebooks" class="{{ page === 'notebook' ? 'is-active' : '' }}" >
                 <mat-icon class="icon">
                     laptop
                 </mat-icon>
                 Notebook
             </a>
-            <a mat-list-item routerLink="smartphones" (click)="funcActive('smartphone')" class="{{ pageActive === 'smartphone' ? 'is-active' : '' }}">
+            <a mat-list-item routerLink="smartphones" class="{{ page === 'smartphone' ? 'is-active' : '' }}">
                 <mat-icon class="icon">
                 phone
                 </mat-icon>

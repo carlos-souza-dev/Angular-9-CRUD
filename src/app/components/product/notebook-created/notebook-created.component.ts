@@ -25,7 +25,9 @@ export class NotebookCreatedComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Notebook | Create',
       icon: 'add_box',
-      routeUrl: '/notebooks'
+      routeUrl: '/notebooks',
+      statusColor: 'create',
+      page: 'notebook'
     }
 
   }

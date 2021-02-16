@@ -39,3 +39,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #db7677;
     font: #fff;
 }
+
+.create {
+    color: #3dbe59
+}
+
+.update {
+    color: #c1c440
+}
+
+.delete {
+    color: #e65656
+}

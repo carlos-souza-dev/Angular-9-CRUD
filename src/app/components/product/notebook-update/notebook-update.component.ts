@@ -21,7 +21,9 @@ export class NotebookUpdateComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Notebook | Update',
       icon: 'build_circle',
-      routeUrl: '/notebooks'
+      routeUrl: '/notebooks',
+      statusColor: 'update',
+      page: 'notebook'
     }
 
   }

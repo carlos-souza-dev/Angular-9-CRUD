@@ -23,7 +23,9 @@ export class NotebookDeleteComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Notebook | Delete',
       icon: 'delete_outline',
-      routeUrl: 'notebooks'
+      routeUrl: 'notebooks',
+      statusColor: 'delete',
+      page: 'notebook'
     }
 
   }

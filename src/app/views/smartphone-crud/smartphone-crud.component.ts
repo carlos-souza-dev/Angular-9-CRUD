@@ -25,7 +25,9 @@ export class SmartphoneCrudComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Smartphone',
       icon: 'phone_iphone',
-      routeUrl: '/'
+      routeUrl: '/',
+      statusColor: '',
+      page: 'smartphone'
     }
 
   }

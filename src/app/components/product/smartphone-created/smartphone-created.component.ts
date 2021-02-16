@@ -25,7 +25,9 @@ export class SmartphoneCreatedComponent implements OnInit {
     this.headerService.headerData = {
       title: 'Smartphone | Create',
       icon: 'add_box',
-      routeUrl: '/smartphones'
+      routeUrl: '/smartphones',
+      statusColor: 'create',
+      page: 'smartphone'
     }
 
   }
