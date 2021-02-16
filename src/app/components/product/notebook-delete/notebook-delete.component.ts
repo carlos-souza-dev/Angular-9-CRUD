@@ -15,7 +15,8 @@ export class NotebookDeleteComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private productService: ProductService) { }
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')

@@ -10,7 +10,10 @@ import { ProductService } from 'src/app/components/product/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(
+    private router: Router, 
+    private productService: ProductService
+  ) { }
 
   notebooks: Product[]
   smartphones: Product[]

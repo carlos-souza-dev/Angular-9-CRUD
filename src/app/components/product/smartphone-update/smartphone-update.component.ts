@@ -12,7 +12,11 @@ export class SmartphoneUpdateComponent implements OnInit {
 
   smartphone: Product
 
-  constructor(private router: Router, private productService: ProductService, private route: ActivatedRoute) { }
+  constructor(
+    private router: Router, 
+    private productService: ProductService, 
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')

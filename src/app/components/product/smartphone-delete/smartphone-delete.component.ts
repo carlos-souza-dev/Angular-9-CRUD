@@ -16,7 +16,8 @@ export class SmartphoneDeleteComponent implements OnInit {
   constructor(
     private router: Router, 
     private productService: ProductService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')

@@ -17,7 +17,8 @@ export class SmartphoneCrudComponent implements OnInit {
   constructor(
     private router: Router, 
     private productService: ProductService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.getSmartphone()
@@ -27,10 +28,6 @@ export class SmartphoneCrudComponent implements OnInit {
     this.router.navigate(['/smartphones/create'])
   }
 
-  navigateToSmartphoneUpdate(url, id){
-    this.router.navigate([`smartphones/update`])
-  }
-
   getSmartphone():void {
     this.productService.listSmartphone().subscribe( res => {
       this.smartphones = res
@@ -38,14 +35,21 @@ export class SmartphoneCrudComponent implements OnInit {
   }
 
   // DIALOG
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(DialogComponent, {
-  //     width: '300px',
-  //   });
+  openDialog(id: string): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        id: id,
+        url: 'smartphone'
+      }, width: "300px"
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.getSmartphone()
+      }
+    });
+  }
+
+
 
 }

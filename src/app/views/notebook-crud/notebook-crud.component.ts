@@ -12,7 +12,10 @@ export class NotebookCrudComponent implements OnInit {
 
   notebooks: Product[]
 
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(
+    private router: Router, 
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
     this.getNotebook();
@@ -20,10 +23,6 @@ export class NotebookCrudComponent implements OnInit {
 
   navigateToNotebookCreate() {
     this.router.navigate(['notebooks/create'])
-  }
-
-  navigateToNotebookUpdate() {
-    this.router.navigate(['notebooks/update'])
   }
 
   getNotebook(): void {

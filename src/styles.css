@@ -29,3 +29,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 1.2rem;
     margin-right: 5px;
 }
+
+.msg-success {
+    background-color: #78bb86;
+    font: #fff;
+}
+
+.msg-error {
+    background-color: #db7677;
+    font: #fff;
+}

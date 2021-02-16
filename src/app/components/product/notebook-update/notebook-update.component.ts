@@ -10,7 +10,11 @@ import { ProductService } from '../product.service';
 })
 export class NotebookUpdateComponent implements OnInit {
 
-  constructor(private router: Router, private productService: ProductService, private route: ActivatedRoute) { }
+  constructor(
+    private router: Router, 
+    private productService: ProductService, 
+    private route: ActivatedRoute
+  ) { }
 
   notebook: Product
 
@@ -23,7 +27,6 @@ export class NotebookUpdateComponent implements OnInit {
 
   updateNotebook(): void {
     this.productService.updateItem('notebook', this.notebook).subscribe((res) => {
-      console.log("Resposta", res)
       this.productService.showMenssage('Produto atualizado!')
       this.router.navigate(['/notebooks'])
     })
