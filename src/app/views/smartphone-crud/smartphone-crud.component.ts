@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/components/product/product.model';
 import { ProductService } from 'src/app/components/product/product.service';
+import { HeaderService } from 'src/app/components/template/header/header.service';
 import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
@@ -17,8 +18,17 @@ export class SmartphoneCrudComponent implements OnInit {
   constructor(
     private router: Router, 
     private productService: ProductService,
-    private dialog: MatDialog
-  ) { }
+    private dialog: MatDialog,
+    private headerService: HeaderService
+  ) { 
+
+    this.headerService.headerData = {
+      title: 'Smartphone',
+      icon: 'phone_iphone',
+      routeUrl: '/'
+    }
+
+  }
 
   ngOnInit(): void {
     this.getSmartphone()

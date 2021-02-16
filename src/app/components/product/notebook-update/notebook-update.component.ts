@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -13,8 +14,17 @@ export class NotebookUpdateComponent implements OnInit {
   constructor(
     private router: Router, 
     private productService: ProductService, 
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private headerService: HeaderService
+  ) { 
+
+    this.headerService.headerData = {
+      title: 'Notebook | Update',
+      icon: 'build_circle',
+      routeUrl: '/notebooks'
+    }
+
+  }
 
   notebook: Product
 

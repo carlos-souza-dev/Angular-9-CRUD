@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/components/product/product.model';
 import { ProductService } from 'src/app/components/product/product.service';
+import { HeaderService } from 'src/app/components/template/header/header.service';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,17 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router, 
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    private headerService: HeaderService
+  ) {
+
+    this.headerService.headerData = {
+      title: 'Home',
+      icon: 'home',
+      routeUrl: '/'
+    }
+
+   }
 
   notebooks: Product[]
   smartphones: Product[]

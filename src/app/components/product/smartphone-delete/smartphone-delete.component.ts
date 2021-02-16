@@ -1,6 +1,7 @@
 import { Reference } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -16,8 +17,17 @@ export class SmartphoneDeleteComponent implements OnInit {
   constructor(
     private router: Router, 
     private productService: ProductService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private headerService: HeaderService
+  ) {
+
+    this.headerService.headerData = {
+      title: 'Smartphone | Delete',
+      icon: 'delete_outline',
+      routeUrl: '/smartphones'
+    }
+
+   }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')

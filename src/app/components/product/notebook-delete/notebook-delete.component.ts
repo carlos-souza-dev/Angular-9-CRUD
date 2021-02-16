@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -15,8 +16,17 @@ export class NotebookDeleteComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    private headerService: HeaderService
+  ) { 
+
+    this.headerService.headerData = {
+      title: 'Notebook | Delete',
+      icon: 'delete_outline',
+      routeUrl: 'notebooks'
+    }
+
+  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')

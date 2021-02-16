@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { HeaderData } from '../../template/header/header.models';
+import { HeaderService } from '../../template/header/header.service';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -15,8 +18,17 @@ export class SmartphoneUpdateComponent implements OnInit {
   constructor(
     private router: Router, 
     private productService: ProductService, 
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private headerService: HeaderService
+  ) { 
+
+    this.headerService.headerData = {
+      title: 'Smartphone | Update',
+      icon: 'build_circle',
+      routeUrl: '/smartphones'
+    }
+
+  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')

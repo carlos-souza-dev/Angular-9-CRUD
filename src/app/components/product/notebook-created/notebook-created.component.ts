@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -17,8 +18,17 @@ export class NotebookCreatedComponent implements OnInit {
 
   constructor(
     private productService: ProductService, 
-    private router: Router
-  ) { }
+    private router: Router,
+    private headerService: HeaderService
+  ) { 
+
+    this.headerService.headerData = {
+      title: 'Notebook | Create',
+      icon: 'add_box',
+      routeUrl: '/notebooks'
+    }
+
+  }
 
   ngOnInit(): void {
   }
