@@ -10,6 +10,7 @@ import { SmartphoneUpdateComponent } from './components/product/smartphone-updat
 import { NotebookUpdateComponent } from './components/product/notebook-update/notebook-update.component';
 import { SmartphoneDeleteComponent } from './components/product/smartphone-delete/smartphone-delete.component';
 import { NotebookDeleteComponent } from './components/product/notebook-delete/notebook-delete.component';
+import { NewsComponent } from './views/news/news.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,9 @@ const routes: Routes = [
   }, {
     path: "smartphones/delete/:id",
     component: SmartphoneDeleteComponent
+  }, {
+    path: "api",
+    component: NewsComponent
   }
 ];
 

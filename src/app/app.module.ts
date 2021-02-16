@@ -43,6 +43,7 @@ import { EditDirective } from './directives/edit.directive';
 import { DialogComponent } from './views/dialog/dialog.component';
 import { SmartphoneDeleteComponent } from './components/product/smartphone-delete/smartphone-delete.component';
 import { NotebookDeleteComponent } from './components/product/notebook-delete/notebook-delete.component';
+import { NewsComponent } from './views/news/news.component';
 
 registerLocaleData(localePt);
 
@@ -66,6 +67,7 @@ registerLocaleData(localePt);
     DialogComponent,
     SmartphoneDeleteComponent,
     NotebookDeleteComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,
