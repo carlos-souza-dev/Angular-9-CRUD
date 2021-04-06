@@ -22,9 +22,9 @@ export class DialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  delete(url: string, id: number){
-    this.productService.deleteItem(url, id).subscribe(() => {
-      this.productService.showMenssage("Item excluir com sucesso!")
+  delete(id: number){
+    this.productService.deleteItem('smartphones/delete', id).subscribe(() => {
+      this.productService.showMenssage("Item excluido com sucesso!")
     })
   }
 }

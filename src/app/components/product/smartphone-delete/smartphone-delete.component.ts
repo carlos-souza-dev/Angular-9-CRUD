@@ -33,13 +33,13 @@ export class SmartphoneDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.productService.readById('smartphone', id).subscribe(smartphone => {
+    this.productService.readById('smartphones/search', id).subscribe(smartphone => {
       this.smartphone = smartphone
     })
   }
 
   deleteSmartphone () {
-    this.productService.deleteItem('smartphone', this.smartphone.id).subscribe(() => {
+    this.productService.deleteItem('smartphones/delete', this.smartphone.id).subscribe(() => {
       this.productService.showMenssage('Item excluído com sucesso!')
     })
     this.router.navigate(['/smartphones'])

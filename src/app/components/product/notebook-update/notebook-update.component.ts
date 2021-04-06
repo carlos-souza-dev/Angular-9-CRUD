@@ -28,17 +28,22 @@ export class NotebookUpdateComponent implements OnInit {
 
   }
 
-  notebook: Product
+  notebook: Product = {} as Product;
+  error: boolean = false;
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.productService.readById('notebook', id).subscribe(notebook => {
-      this.notebook = notebook
+    this.productService.readById('notebooks/search', id).subscribe(notebook => {
+      if(notebook.id >= 1){
+        this.notebook = notebook
+      } else {
+        this.productService.showMenssage('Produto não encontrado!', true);
+      }
     })
   }
 
   updateNotebook(): void {
-    this.productService.updateItem('notebook', this.notebook).subscribe((res) => {
+    this.productService.updateItem('notebooks/update', this.notebook).subscribe((res) => {
       this.productService.showMenssage('Produto atualizado!')
       this.router.navigate(['/notebooks'])
     })

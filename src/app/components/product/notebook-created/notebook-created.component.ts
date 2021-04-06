@@ -11,10 +11,7 @@ import { ProductService } from '../product.service';
 })
 export class NotebookCreatedComponent implements OnInit {
 
-  notebook: Product = {
-    name: '',
-    price: null
-  }
+  notebook: Product = {} as Product;
 
   constructor(
     private productService: ProductService, 
@@ -37,8 +34,10 @@ export class NotebookCreatedComponent implements OnInit {
 
   createNotebook(url): void {
     this.productService.createItem(url, this.notebook).subscribe(() => {
-      this.productService.showMenssage('Notebook salvo!')
+      // this.productService.showMenssage('Notebook salvo!')
       this.router.navigate(['/notebooks'])
+    }, HttpErrorResponse => {
+      console.log("Algo deu errado")
     })
   }
 

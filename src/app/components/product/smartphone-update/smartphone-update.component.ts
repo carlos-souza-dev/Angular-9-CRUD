@@ -13,7 +13,7 @@ import { ProductService } from '../product.service';
 })
 export class SmartphoneUpdateComponent implements OnInit {
 
-  smartphone: Product
+  smartphone: Product = {} as Product;
 
   constructor(
     private router: Router, 
@@ -34,13 +34,17 @@ export class SmartphoneUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.productService.readById('smartphone', id).subscribe( smartphone => {
-      this.smartphone = smartphone
+    this.productService.readById('smartphones/search', id).subscribe( smartphone => {
+      if(smartphone.id >= 1){
+        this.smartphone = smartphone
+      } else {
+        this.productService.showMenssage('Produto não encontrado!', true);
+      }
     })
   }
 
   updateSmartphone(): void {
-    this.productService.updateItem('smartphone', this.smartphone).subscribe(() => {
+    this.productService.updateItem('smartphones/update', this.smartphone).subscribe(() => {
       this.productService.showMenssage('Produso atualizado!')
       this.router.navigate(['/smartphones'])
     }) 
